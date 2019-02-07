@@ -27,13 +27,15 @@ export default (userConfig) => {
       allLanguages, defaultLanguage, localePath, localeStructure,
     } = combinedConfig
 
+    const dir = () => ((process.env.NODE_ENV === 'production') ? '/' : process.cwd())
+
     combinedConfig = {
       ...combinedConfig,
       preload: allLanguages,
-      ns: getAllNamespaces(path.join(process.cwd(), `${localePath}/${defaultLanguage}`)),
+      ns: getAllNamespaces(path.join(dir(), `${localePath}/${defaultLanguage}`)),
       backend: {
-        loadPath: path.join(process.cwd(), `${localePath}/${localeStructure}.json`),
-        addPath: path.join(process.cwd(), `${localePath}/${localeStructure}.missing.json`),
+        loadPath: path.join(dir(), `${localePath}/${localeStructure}.json`),
+        addPath: path.join(dir(), `${localePath}/${localeStructure}.missing.json`),
       },
     }
   }
