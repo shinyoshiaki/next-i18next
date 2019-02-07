@@ -27,7 +27,7 @@ export default (userConfig) => {
       allLanguages, defaultLanguage, localePath, localeStructure,
     } = combinedConfig
 
-    const dir = () => ((process.env.NODE_ENV === 'production') ? '/' : process.cwd())
+    const dir = () => `/`
 
     combinedConfig = {
       ...combinedConfig,
