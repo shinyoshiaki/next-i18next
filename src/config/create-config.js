@@ -27,7 +27,7 @@ export default (userConfig) => {
       allLanguages, defaultLanguage, localePath, localeStructure,
     } = combinedConfig
 
-    const dir = () => `/`
+    const dir = () => '/'
 
     combinedConfig = {
       ...combinedConfig,

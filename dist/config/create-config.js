@@ -37,7 +37,7 @@ var _default = userConfig => {
       localeStructure
     } = combinedConfig;
 
-    const dir = () => `/`;
+    const dir = () => '/';
 
     combinedConfig = { ...combinedConfig,
       preload: allLanguages,
